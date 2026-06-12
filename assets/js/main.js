@@ -92,7 +92,8 @@
         var depth = parseFloat(layer.dataset.depth);
         // package (0) sinks slightly; deeper layers lift further from the
         // static 44px-per-depth fan set in CSS
-        var dy = depth === 0 ? 20 * eased : -depth * (44 + 78 * eased);
+        // package sinks 44px so the die's bottom blocks (TPU row) clear it
+        var dy = depth === 0 ? 44 * eased : -depth * (44 + 78 * eased);
         layer.style.transform = "translateY(" + dy + "px)";
         layer.classList.toggle("is-tagged", progress > 0.08);
       });
