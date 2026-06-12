@@ -12,8 +12,8 @@
   --lblue: #6CCCD8;         /* Reef Light Blue */
   --orange: #FEA23A;        /* Signal Orange */
   --violet: #7100FF;        /* UoS Electric Violet (bridge) */
-  --muted: #93a0b8;
-  --line: rgba(108, 204, 216, .18);
+  --muted: #aab6cc;
+  --line: rgba(108, 204, 216, .26);
   --maxw: 1180px;
   --sans: "Source Sans 3", system-ui, sans-serif;
   --mono: "JetBrains Mono", ui-monospace, monospace;
@@ -133,21 +133,28 @@ code { font-family: var(--mono); font-size: .92em; color: var(--lblue); }
 .chip__layer[data-depth="4"] { transform: translateY(-176px); }
 .chip__layer .chip__tag { opacity: 0; transition: opacity .4s ease; }
 .chip__layer[data-depth="0"] .chip__tag, .chip__layer.is-tagged .chip__tag { opacity: 1; }
+/* each layer gets its own hue so the exploded stack reads at a glance:
+   package neutral, die blue, metal teal, cells violet, transistor orange */
 .lay { stroke-width: 1.5; }
-.lay--pkg   { fill: #1a2335; stroke: #34415e; }
-.lay--die   { fill: #20304d; stroke: var(--blue); }
-.lay--metal { fill: rgba(32,48,77,.55); stroke: var(--blue); }
-.lay--cells { fill: rgba(32,48,77,.4); stroke: #34415e; }
-.lay--deep  { fill: rgba(16,24,40,.92); stroke: var(--line); }
-.pins rect { fill: #34415e; }
+.lay--pkg   { fill: #1d2638; stroke: #4a5a7c; }
+.lay--die   { fill: #20304d; stroke: #6f95d8; }
+.lay--metal { fill: rgba(26,56,66,.6); stroke: #4fb9c9; }
+.lay--cells { fill: rgba(46,38,77,.55); stroke: #8f78e8; }
+.lay--deep  { fill: rgba(40,28,16,.7); stroke: rgba(254,162,58,.55); }
+.pins rect { fill: #4a5a7c; }
 .dot { fill: var(--orange); }
-.block { fill: rgba(108,204,216,.14); stroke: var(--lblue); stroke-width: 1; }
+.block { fill: rgba(108,204,216,.16); stroke: var(--lblue); stroke-width: 1; }
 .route path { fill: none; stroke: var(--lblue); stroke-width: 2.4; stroke-dasharray: 6 7; animation: traceflow 18s linear infinite; }
 .route circle { fill: none; stroke: var(--lblue); stroke-width: 2; }
-.cells rect { fill: rgba(75,113,184,.35); stroke: var(--blue); stroke-width: .8; }
+.cells rect { fill: rgba(154,120,255,.32); stroke: #a78bfa; stroke-width: .8; }
 .schem path { fill: none; stroke: var(--orange); stroke-width: 2.4; }
 .schem circle { fill: var(--orange); }
-.chip__tag { fill: var(--muted); font-size: 13px; text-anchor: middle; letter-spacing: .06em; }
+.chip__tag { font-family: var(--mono); font-size: 13px; text-anchor: middle; letter-spacing: .06em; }
+.chip__layer[data-depth="0"] .chip__tag { fill: #98a6c0; }
+.chip__layer[data-depth="1"] .chip__tag { fill: #88abe8; }
+.chip__layer[data-depth="2"] .chip__tag { fill: #6cccd8; }
+.chip__layer[data-depth="3"] .chip__tag { fill: #b39dfa; }
+.chip__layer[data-depth="4"] .chip__tag { fill: #feb35e; }
 .chip__die { fill: var(--lblue); font-size: 15px; font-weight: 700; text-anchor: middle; }
 
 /* stats */
@@ -220,7 +227,8 @@ code { font-family: var(--mono); font-size: .92em; color: var(--lblue); }
 .taglist span { border: 1px solid var(--line); border-radius: 99px; padding: .25em .9em; font-size: .76rem; color: var(--lblue); }
 
 /* timeline */
-.timeline { list-style: none; margin: 0; padding: 0; display: grid; gap: 1.1rem; }
+/* margin auto preserved: this rule outranks .section > * centring otherwise */
+.timeline { list-style: none; margin: 0 auto; padding: 0; display: grid; gap: 1.1rem; }
 .timeline__item {
   display: grid; grid-template-columns: 4.4rem 1fr; gap: 1.3rem; align-items: start;
   background: rgba(16,24,40,.6); border: 1px solid var(--line); border-radius: 14px; padding: 1.3rem 1.5rem;
