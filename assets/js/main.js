@@ -84,16 +84,18 @@
       ticking = false;
       var vh = window.innerHeight;
       var rect = stack.getBoundingClientRect();
-      // 0 at page top, →1 after scrolling ~one viewport
-      var progress = Math.min(Math.max(window.scrollY / (vh * 0.9), 0), 1);
+      // The hero is pinned (position: sticky) for ~85svh of scroll runway;
+      // finish the explosion at ~70% of it so it's fully open while still on screen
+      var progress = Math.min(Math.max(window.scrollY / (vh * 0.6), 0), 1);
       if (rect.bottom < -200) return;
+      var eased = 1 - Math.pow(1 - progress, 2);
       layers.forEach(function (layer) {
         var depth = parseFloat(layer.dataset.depth);
         // package (0) sinks slightly; deeper layers lift further from the
         // static 44px-per-depth fan set in CSS
-        var dy = depth === 0 ? 16 * progress : -depth * (44 + 64 * progress);
+        var dy = depth === 0 ? 20 * eased : -depth * (44 + 78 * eased);
         layer.style.transform = "translateY(" + dy + "px)";
-        layer.classList.toggle("is-tagged", progress > 0.12);
+        layer.classList.toggle("is-tagged", progress > 0.08);
       });
     }
     window.addEventListener("scroll", function () {
