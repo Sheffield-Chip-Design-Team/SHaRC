@@ -225,6 +225,19 @@ code { font-family: var(--mono); font-size: .92em; color: var(--lblue); }
 .timeline__item h3 { margin-bottom: .25em; }
 .timeline__item p { margin: 0; color: var(--muted); }
 
+/* events */
+.card--event { position: relative; }
+.event__when {
+  display: inline-block; margin-bottom: .8rem; font-size: .74rem; letter-spacing: .08em;
+  color: var(--orange); border: 1px solid rgba(254,162,58,.35); border-radius: 99px; padding: .25em .9em;
+}
+
+/* silicon library */
+.library__head { margin-top: 2.6rem; }
+.library__sub { color: var(--muted); }
+.library .chipname { text-decoration: none; transition: border-color .18s ease, color .18s ease; }
+.library .chipname:hover { border-color: var(--lblue); color: var(--lblue); }
+
 /* partners */
 .partners { display: flex; flex-wrap: wrap; gap: .7rem; align-content: start; }
 .chipname {
