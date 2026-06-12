@@ -20,7 +20,12 @@
 }
 
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  /* gentle section snapping: settles nearby section starts into place
+     without trapping the scroll on long sections */
+  scroll-snap-type: y proximity;
+}
 body {
   margin: 0;
   background: var(--navy);
@@ -168,7 +173,22 @@ code { font-family: var(--mono); font-size: .92em; color: var(--lblue); }
 .stat__l { color: var(--muted); font-size: .9rem; line-height: 1.35; display: block; margin-top: .2rem; }
 
 /* ---------- sections ---------- */
-.section { padding: 5.5rem clamp(1rem, 4vw, 2.6rem); }
+.section {
+  padding: 5.5rem clamp(1rem, 4vw, 2.6rem);
+  position: relative; isolation: isolate; overflow: clip;
+  /* anchor links and snap stops settle just below the fixed nav */
+  scroll-snap-align: start;
+  scroll-margin-top: 4.2rem;
+}
+/* ambient circuit traces behind section content */
+.bg-traces {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  pointer-events: none; z-index: -1;
+}
+.bg-traces .traces path { opacity: .28; }
+.bg-traces .traces circle { opacity: .32; }
+.bg-traces--slow .traces path { animation-duration: 46s; }
+.bg-traces--rev .traces path { animation-direction: reverse; }
 .section > * { max-width: var(--maxw); margin-left: auto; margin-right: auto; }
 .section--alt { background: linear-gradient(180deg, var(--slate), var(--navy)); }
 .section__head { margin-bottom: 2.6rem; }
