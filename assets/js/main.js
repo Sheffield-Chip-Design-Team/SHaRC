@@ -78,15 +78,14 @@
   var stack = document.getElementById("chipStack");
   if (stack && !reduceMotion) {
     var layers = stack.querySelectorAll(".chip__layer");
-    var ticking = false;
 
     function explode() {
-      ticking = false;
       var vh = window.innerHeight;
       var rect = stack.getBoundingClientRect();
-      // The hero is pinned (position: sticky) for ~85svh of scroll runway;
-      // finish the explosion at ~70% of it so it's fully open while still on screen
-      var progress = Math.min(Math.max(window.scrollY / (vh * 0.6), 0), 1);
+      // The hero is pinned (position: sticky) for ~170svh of scroll runway;
+      // finish the explosion around 75% of it so the fully-open stack is
+      // held on screen for a beat before the page releases
+      var progress = Math.min(Math.max(window.scrollY / (vh * 1.25), 0), 1);
       if (rect.bottom < -200) return;
       var eased = 1 - Math.pow(1 - progress, 2);
       layers.forEach(function (layer) {
@@ -98,11 +97,23 @@
         layer.classList.toggle("is-tagged", progress > 0.08);
       });
     }
-    window.addEventListener("scroll", function () {
-      if (!ticking) { ticking = true; requestAnimationFrame(explode); }
-    }, { passive: true });
+    // called directly: five style writes per event is cheap, and avoids a
+    // queued-rAF flag that could wedge if a frame never fires
+    window.addEventListener("scroll", explode, { passive: true });
     explode();
   }
+
+  /* ----- tapeout gallery: flip cards ----- */
+  document.querySelectorAll(".die").forEach(function (die) {
+    function flip() { die.classList.toggle("is-flipped"); }
+    die.addEventListener("click", function (e) {
+      if (e.target.closest("a")) return; // let repo links work
+      flip();
+    });
+    die.addEventListener("keydown", function (e) {
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); flip(); }
+    });
+  });
 
   /* ----- footer year ----- */
   var year = document.getElementById("year");

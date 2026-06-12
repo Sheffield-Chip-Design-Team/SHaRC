@@ -102,8 +102,9 @@ code { font-family: var(--mono); font-size: .92em; color: var(--lblue); }
   padding-top: 5.5rem;
 }
 /* scroll runway: in-flow space (sticky can't travel into padding) that keeps
-   the pinned hero on screen while the chip explosion plays */
-.hero::after { content: ""; display: block; height: 85svh; }
+   the pinned hero on screen while the chip explosion plays. Generous height
+   so a momentum flick doesn't blow straight past the animation */
+.hero::after { content: ""; display: block; height: 170svh; }
 .traces path {
   fill: none; stroke: var(--lblue); stroke-width: 2; opacity: .35;
   stroke-dasharray: 8 9; animation: traceflow 28s linear infinite;
@@ -232,6 +233,52 @@ code { font-family: var(--mono); font-size: .92em; color: var(--lblue); }
 .timeline__item h3 { margin-bottom: .25em; }
 .timeline__item p { margin: 0; color: var(--muted); }
 
+/* tapeout gallery: flip cards styled as chip packages */
+.section__lede { color: var(--muted); max-width: 46em; }
+.fab { perspective: 1200px; }
+.die {
+  position: relative; cursor: pointer; min-height: 240px;
+  outline-offset: 4px; border-radius: 16px;
+}
+.die:focus-visible { outline: 2px solid var(--lblue); }
+.die__inner {
+  position: relative; width: 100%; height: 100%; min-height: inherit;
+  transform-style: preserve-3d; transition: transform .65s cubic-bezier(.2,.8,.25,1);
+}
+.die:hover:not(.is-flipped) .die__inner { transform: rotateY(12deg) rotateX(4deg); }
+.die.is-flipped .die__inner { transform: rotateY(180deg); }
+.die__face {
+  position: absolute; inset: 0; backface-visibility: hidden; -webkit-backface-visibility: hidden;
+  display: flex; flex-direction: column; justify-content: center; gap: .35rem;
+  background: var(--slate); border: 1px solid var(--line); border-radius: 16px;
+  padding: 1.6rem 1.5rem;
+}
+/* package pins along top and bottom edges */
+.die__front::before, .die__front::after {
+  content: ""; position: absolute; left: 14%; right: 14%; height: 8px;
+  background: repeating-linear-gradient(90deg, #34415e 0 14px, transparent 14px 26px);
+}
+.die__front::before { top: -8px; border-radius: 2px 2px 0 0; }
+.die__front::after { bottom: -8px; border-radius: 0 0 2px 2px; }
+.die__front { border-top: 3px solid var(--dc, var(--lblue)); }
+.die__front h3 { margin: 0; }
+.die__sub { margin: 0; color: var(--muted); }
+.die__pdk {
+  align-self: flex-start; font-size: .72rem; letter-spacing: .1em; margin-bottom: .5rem;
+  color: var(--dc, var(--lblue)); border: 1px solid var(--dc, var(--lblue));
+  border-radius: 99px; padding: .2em .8em; opacity: .9;
+}
+.die__meta { color: var(--muted); font-size: .76rem; margin-top: .4rem; }
+.die__hint {
+  position: absolute; right: 1.1rem; bottom: .9rem; font-size: .72rem;
+  color: var(--dc, var(--lblue)); opacity: .7;
+}
+.die__back { transform: rotateY(180deg); background: var(--slate-2); }
+.die__back p { margin: 0 0 .6rem; color: var(--muted); font-size: .95rem; }
+.die__back p strong { color: var(--white); }
+.die__clock { color: var(--lblue); font-size: .76rem; }
+.die__back a { font-size: .82rem; }
+
 /* events */
 .card--event { position: relative; }
 .event__when {
@@ -290,7 +337,7 @@ code { font-family: var(--mono); font-size: .92em; color: var(--lblue); }
   .hero__inner, .cols, .join, .flagship { grid-template-columns: 1fr; }
   .grid--3, .grid--2 { grid-template-columns: 1fr; }
   .stats { grid-template-columns: repeat(2, 1fr); }
-  .hero::after { height: 70svh; }
+  .hero::after { height: 130svh; }
   .hero__pin { padding-top: 5rem; padding-bottom: 2rem; }
   .hero__chip { max-width: 460px; margin: 0 auto; }
   .join__mark { order: -1; width: 140px; }
@@ -316,5 +363,7 @@ code { font-family: var(--mono); font-size: .92em; color: var(--lblue); }
   .reveal { opacity: 1; transform: none; transition: none; }
   .traces path, .route path { animation: none; }
   .chip__layer .chip__tag { opacity: 1; transition: none; }
+  .die__inner { transition: none; }
+  .die:hover:not(.is-flipped) .die__inner { transform: none; }
   .btn, .card { transition: none; }
 }
