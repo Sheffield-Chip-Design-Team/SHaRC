@@ -28,6 +28,7 @@
     <a href="#about">About</a>
     <a href="#silicon">Why silicon</a>
     <a href="#projects">Projects</a>
+    <a href="#tapeouts">Tapeouts</a>
     <a href="#achievements">Achievements</a>
     <a href="#events">Events</a>
     <a href="#partners">Partners</a>
@@ -143,7 +144,7 @@
   </div>
 
   <div class="stats reveal" id="stats">
-    <div class="stat"><span class="stat__n" data-count="3">0</span><span class="stat__l">ASIC tapeouts</span></div>
+    <div class="stat"><span class="stat__n" data-count="6">0</span><span class="stat__l">designs taped out on real silicon</span></div>
     <div class="stat"><span class="stat__n" data-count="126">0</span><span class="stat__l">at the UK's first Tiny Tapeout workshop</span></div>
     <div class="stat"><span class="stat__n" data-count="37">0</span><span class="stat__l">members across 4 project teams</span></div>
     <div class="stat"><span class="stat__n" data-count="7">0</span><span class="stat__l">industry partners engaged</span></div>
@@ -290,15 +291,139 @@
       <a class="chipname" href="https://github.com/Sheffield-Chip-Design-Team/Coraltb" rel="noopener">CoralTB · EDA utilities</a>
       <a class="chipname" href="https://github.com/Sheffield-Chip-Design-Team/sharc-memory-lib" rel="noopener">memory IP library</a>
       <a class="chipname" href="https://github.com/Sheffield-Chip-Design-Team/bsc-uart" rel="noopener">UART IP + C headers</a>
-      <a class="chipname" href="https://github.com/Sheffield-Chip-Design-Team/tiny-uart-test" rel="noopener">UART test chip</a>
-      <a class="chipname" href="https://github.com/Sheffield-Chip-Design-Team/tiny-spi-mem-ctrl-test" rel="noopener">SPI memory controller tile</a>
       <a class="chipname" href="https://github.com/Sheffield-Chip-Design-Team/tiny-ascon" rel="noopener">ASCON accelerator</a>
-      <a class="chipname" href="https://github.com/Sheffield-Chip-Design-Team/tiny-demoscene" rel="noopener">demoscene chip</a>
       <a class="chipname" href="https://github.com/Sheffield-Chip-Design-Team/tetra-soc" rel="noopener">tetra-soc · 4-bit SoC</a>
-      <a class="chipname" href="https://github.com/Sheffield-Chip-Design-Team/retro-pad-rv-peripheral" rel="noopener">Retro-Pad RV peripheral</a>
+      <a class="chipname" href="https://github.com/Sheffield-Chip-Design-Team/tetra-sim" rel="noopener">tetra-sim · IDE + simulator</a>
       <a class="chipname" href="https://github.com/Sheffield-Chip-Design-Team/Getting-Started-Frontend-Hardware" rel="noopener">Verilog starter guide</a>
     </div>
   </div>
+</section>
+
+<!-- ============ TAPEOUTS ============ -->
+<section class="section" id="tapeouts">
+  <div class="section__head reveal">
+    <p class="kicker mono">// on real silicon</p>
+    <h2>Six designs. Two foundries. <span class="grad">Real chips.</span></h2>
+    <p class="section__lede">Every one of these was designed by students and manufactured on a
+    multi-project wafer through <a href="https://tinytapeout.com" rel="noopener">Tiny Tapeout</a>,
+    on the open-source SkyWater SKY130 and GlobalFoundries GF180MCU process design kits.
+    <span class="mono">Click a chip to flip it over.</span></p>
+  </div>
+  <div class="grid grid--3 fab">
+
+    <article class="die reveal" tabindex="0" aria-label="TinyTapeStation chip. Press Enter to flip." style="--dc:#FEA23A">
+      <div class="die__inner">
+        <div class="die__face die__front">
+          <span class="die__pdk mono">SKY130A</span>
+          <h3>TinyTapeStation</h3>
+          <p class="die__sub">Retro game console ASIC</p>
+          <span class="die__meta mono">TT10 → ttsky25b · 2×2 tiles</span>
+          <span class="die__hint mono">flip ↻</span>
+        </div>
+        <div class="die__face die__back">
+          <p>PPU, APU, sprite engine and a built-in dragon mini-game, with NES controller input.
+          The flagship: a video game system recreated from the gate level.</p>
+          <span class="mono die__clock">25 MHz · Verilog</span>
+          <a class="mono" href="https://github.com/Sheffield-Chip-Design-Team/TinyTapeStation" rel="noopener">repo →</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="die reveal" tabindex="0" aria-label="SHaRC VGA Demo chip. Press Enter to flip." style="--dc:#6CCCD8">
+      <div class="die__inner">
+        <div class="die__face die__front">
+          <span class="die__pdk mono">SKY130A</span>
+          <h3>SHaRC VGA Demo</h3>
+          <p class="die__sub">Demoscene chip</p>
+          <span class="die__meta mono">ttsky26a · 2×2 tiles</span>
+          <span class="die__hint mono">flip ↻</span>
+        </div>
+        <div class="die__face die__back">
+          <p>Our logo, drawn live over VGA by dedicated silicon: palette, sync generator and
+          bitmap ROM. Art you can probe with an oscilloscope.</p>
+          <span class="mono die__clock">25 MHz · Verilog</span>
+          <a class="mono" href="https://github.com/Sheffield-Chip-Design-Team/tiny-demoscene" rel="noopener">repo →</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="die reveal" tabindex="0" aria-label="SNES/NES Receiver chip. Press Enter to flip." style="--dc:#4B71B8">
+      <div class="die__inner">
+        <div class="die__face die__front">
+          <span class="die__pdk mono">SKY130</span>
+          <h3>SNES/NES Receiver</h3>
+          <p class="die__sub">RISC-V game-pad peripheral</p>
+          <span class="die__meta mono">ttsky25a · 1×1 tile</span>
+          <span class="die__hint mono">flip ↻</span>
+        </div>
+        <div class="die__face die__back">
+          <p>Reads button states from SNES and NES controllers as a memory-mapped peripheral for
+          the TinyQV RISC-V CPU. Our RISC-V peripheral competition entry.</p>
+          <span class="mono die__clock">64 MHz · Verilog</span>
+          <a class="mono" href="https://github.com/Sheffield-Chip-Design-Team/retro-pad-rv-peripheral" rel="noopener">repo →</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="die reveal" tabindex="0" aria-label="BSS UART chip. Press Enter to flip." style="--dc:#9ADBE8">
+      <div class="die__inner">
+        <div class="die__face die__front">
+          <span class="die__pdk mono">SKY130A</span>
+          <h3>BSS UART</h3>
+          <p class="die__sub">Serial IP test chip</p>
+          <span class="die__meta mono">ttsky26a · 1×1 tile</span>
+          <span class="die__hint mono">flip ↻</span>
+        </div>
+        <div class="die__face die__back">
+          <p>The Byte-Sized Serial UART: SHaRC's in-house UART IP with TX, RX and FIFO,
+          proven in silicon so other projects can reuse it with confidence.</p>
+          <span class="mono die__clock">64 MHz · Verilog</span>
+          <a class="mono" href="https://github.com/Sheffield-Chip-Design-Team/tiny-uart-test" rel="noopener">repo →</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="die reveal" tabindex="0" aria-label="SPI Memory Test chip. Press Enter to flip." style="--dc:#6CCCD8">
+      <div class="die__inner">
+        <div class="die__face die__front">
+          <span class="die__pdk mono">SKY130A</span>
+          <h3>SPI Memory Test</h3>
+          <p class="die__sub">Memory controller tile</p>
+          <span class="die__meta mono">ttsky26a · 1×1 tile</span>
+          <span class="die__hint mono">flip ↻</span>
+        </div>
+        <div class="die__face die__back">
+          <p>SPI RAM reader with VGA timing output: the test vehicle for SHaRC's SPI memory
+          controller block, switchable between SPI and VGA modes on the same pins.</p>
+          <span class="mono die__clock">25 MHz · Verilog</span>
+          <a class="mono" href="https://github.com/Sheffield-Chip-Design-Team/tiny-spi-mem-ctrl-test" rel="noopener">repo →</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="die reveal" tabindex="0" aria-label="Super-Simple-SPI-CPU chip. Press Enter to flip." style="--dc:#FEA23A">
+      <div class="die__inner">
+        <div class="die__face die__front">
+          <span class="die__pdk mono">GF180MCU</span>
+          <h3>Super-Simple-SPI-CPU</h3>
+          <p class="die__sub">4-bit CPU</p>
+          <span class="die__meta mono">ttgf0p2 · 1×1 tile</span>
+          <span class="die__hint mono">flip ↻</span>
+        </div>
+        <div class="die__face die__back">
+          <p>The Aeolus 4-bit CPU, loading its programs from QSPI flash. Our first chip on
+          GlobalFoundries' 180&nbsp;nm open PDK, and the seed of the tetra-soc project.</p>
+          <span class="mono die__clock">30 MHz · Verilog</span>
+          <a class="mono" href="https://github.com/Sheffield-Chip-Design-Team/super-simple-spi-cpu" rel="noopener">repo →</a>
+        </div>
+      </div>
+    </article>
+
+  </div>
+  <p class="section__note reveal">
+    Each Tiny Tapeout tile is roughly 160 × 100 µm of silicon. Small chip, real fab, full flow:
+    RTL, verification, hardening, sign-off, manufacture.
+  </p>
 </section>
 
 <!-- ============ ACHIEVEMENTS ============ -->
@@ -309,10 +434,11 @@
   </div>
   <ol class="timeline">
     <li class="timeline__item reveal">
-      <span class="timeline__badge mono">3×</span>
-      <div><h3>Three ASIC tapeouts</h3>
-      <p>Student designs manufactured on real silicon through Tiny Tapeout shuttles, establishing
-      Sheffield as the leading UK student society for chip design.</p></div>
+      <span class="timeline__badge mono">6×</span>
+      <div><h3>Six designs taped out</h3>
+      <p>Student designs manufactured on real silicon across five Tiny Tapeout shuttles and two open
+      PDKs (SkyWater SKY130 and GlobalFoundries GF180MCU), establishing Sheffield as the leading UK
+      student society for chip design. <a href="#tapeouts">See the silicon ↑</a></p></div>
     </li>
     <li class="timeline__item reveal">
       <span class="timeline__badge mono">126</span>
