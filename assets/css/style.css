@@ -154,7 +154,8 @@ code { font-family: var(--mono); font-size: .92em; color: var(--lblue); }
 .cells rect { fill: rgba(154,120,255,.32); stroke: #a78bfa; stroke-width: .8; }
 .schem path { fill: none; stroke: var(--orange); stroke-width: 2.4; }
 .schem circle { fill: var(--orange); }
-.chip__tag { font-family: var(--mono); font-size: 13px; text-anchor: middle; letter-spacing: .06em; }
+.chip__tag { font-family: var(--mono); font-size: 13px; text-anchor: start; letter-spacing: .06em; }
+.chip__blk { font-family: var(--mono); fill: #9fc4ee; font-size: 11px; font-weight: 600; text-anchor: middle; }
 .chip__layer[data-depth="0"] .chip__tag { fill: #98a6c0; }
 .chip__layer[data-depth="1"] .chip__tag { fill: #88abe8; }
 .chip__layer[data-depth="2"] .chip__tag { fill: #6cccd8; }
@@ -187,6 +188,9 @@ code { font-family: var(--mono); font-size: .92em; color: var(--lblue); }
 .bg-traces {
   position: absolute; left: 0; right: 0; height: 90px;
   pointer-events: none; z-index: -1;
+  /* .section > * caps children to the content column; traces must bleed
+     to the viewport edges */
+  max-width: none; margin: 0;
 }
 .bg-traces--top { top: 14px; }
 .bg-traces--bottom { bottom: 14px; }
