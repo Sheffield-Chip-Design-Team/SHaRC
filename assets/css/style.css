@@ -180,13 +180,19 @@ code { font-family: var(--mono); font-size: .92em; color: var(--lblue); }
   scroll-snap-align: start;
   scroll-margin-top: 4.2rem;
 }
-/* ambient circuit traces behind section content */
+/* ambient circuit traces: fixed-height strips pinned inside the section's
+   top/bottom padding so they can never overlap text, with viewBox x-range
+   mapped edge-to-edge (preserveAspectRatio=none) so lines always run from
+   the sides of the screen */
 .bg-traces {
-  position: absolute; inset: 0; width: 100%; height: 100%;
+  position: absolute; left: 0; right: 0; height: 90px;
   pointer-events: none; z-index: -1;
 }
-.bg-traces .traces path { opacity: .28; }
-.bg-traces .traces circle { opacity: .32; }
+.bg-traces--top { top: 14px; }
+.bg-traces--bottom { bottom: 14px; }
+.bg-traces svg { width: 100%; height: 100%; display: block; }
+.bg-traces .traces path { opacity: .3; }
+.bg-traces .traces circle { opacity: .34; }
 .bg-traces--slow .traces path { animation-duration: 46s; }
 .bg-traces--rev .traces path { animation-direction: reverse; }
 .section > * { max-width: var(--maxw); margin-left: auto; margin-right: auto; }
