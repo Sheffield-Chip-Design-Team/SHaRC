@@ -1,0 +1,438 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SHaRC — Sheffield Hardware and Reconfigurable Computing</title>
+<meta name="description" content="SHaRC is the University of Sheffield's student-led chip design group. From FPGA prototyping to full ASIC tapeout — RISC-V, open-source silicon, and a community that ships real hardware.">
+<meta property="og:title" content="SHaRC — Sheffield Hardware and Reconfigurable Computing">
+<meta property="og:description" content="Students who design, verify and tape out real silicon. 3 tapeouts. UK's first Tiny Tapeout workshop. Join us or partner with us.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/img/logos/SHARC_Logo_lightblue.png">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="nav" id="nav">
+  <a class="nav__brand" href="#top" aria-label="SHaRC home">
+    <img src="assets/brand/sharc-mark-lightblue.svg" alt="" width="40" height="42">
+    <span>SHaRC</span>
+  </a>
+  <nav class="nav__links" aria-label="Primary">
+    <a href="#about">About</a>
+    <a href="#silicon">Why silicon</a>
+    <a href="#projects">Projects</a>
+    <a href="#achievements">Achievements</a>
+    <a href="#partners">Partners</a>
+    <a class="btn btn--small btn--accent" href="#join">Join us</a>
+  </nav>
+  <button class="nav__toggle" id="navToggle" aria-label="Menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<main id="main">
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <svg class="hero__traces" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <g class="traces">
+      <path d="M-20 220 H 320 L 400 300 H 760" />
+      <path d="M-20 640 H 180 L 260 560 H 520 L 600 640 H 880" />
+      <path d="M1460 160 H 1180 L 1100 240 H 940" />
+      <path d="M1460 760 H 1240 L 1160 680 H 1000 L 940 740" />
+      <circle cx="770" cy="300" r="7"/>
+      <circle cx="890" cy="640" r="7"/>
+      <circle cx="930" cy="240" r="7"/>
+      <circle cx="930" cy="745" r="7"/>
+    </g>
+  </svg>
+
+  <div class="hero__inner">
+    <div class="hero__copy reveal">
+      <p class="kicker mono">University of Sheffield · Student-led</p>
+      <h1>Students who tape out <span class="grad">real silicon</span>.</h1>
+      <p class="hero__sub">
+        SHaRC — <strong>Sheffield Hardware and Reconfigurable Computing</strong> — takes students
+        from their first logic gate to manufactured chips: FPGA prototyping, RISC-V system-on-chip design,
+        and open-source ASIC tapeouts.
+      </p>
+      <div class="hero__cta">
+        <a class="btn btn--accent" href="#join">Join SHaRC</a>
+        <a class="btn btn--ghost" href="#partners">Partner with us</a>
+      </div>
+      <p class="hero__scroll mono" aria-hidden="true">scroll — the chip comes apart ↓</p>
+    </div>
+
+    <!-- Exploded chip: layers separate as you scroll -->
+    <div class="hero__chip" id="chipStack" aria-label="Exploded view of a chip: package, die, metal routing, standard cells, transistor">
+      <svg viewBox="0 0 520 560" class="chip">
+        <!-- transistor (deepest) -->
+        <g class="chip__layer" data-depth="4">
+          <rect x="150" y="210" width="220" height="130" rx="10" class="lay lay--deep"/>
+          <g class="schem">
+            <path d="M225 255 v 50 M225 280 h -45 M245 250 v 60 M245 258 h 50 v -28 M245 302 h 50 v 28"/>
+            <circle cx="295" cy="225" r="5"/>
+            <circle cx="295" cy="335" r="5"/>
+          </g>
+          <text x="260" y="365" class="chip__tag mono">transistor</text>
+        </g>
+        <!-- standard cells -->
+        <g class="chip__layer" data-depth="3">
+          <g transform="skewX(-24)" transform-origin="260 280">
+            <rect x="120" y="215" width="280" height="130" rx="8" class="lay lay--cells"/>
+            <g class="cells">
+              <rect x="140" y="230" width="34" height="22"/><rect x="182" y="230" width="50" height="22"/><rect x="240" y="230" width="26" height="22"/><rect x="274" y="230" width="58" height="22"/><rect x="340" y="230" width="40" height="22"/>
+              <rect x="140" y="260" width="58" height="22"/><rect x="206" y="260" width="30" height="22"/><rect x="244" y="260" width="44" height="22"/><rect x="296" y="260" width="34" height="22"/><rect x="338" y="260" width="42" height="22"/>
+              <rect x="140" y="290" width="26" height="22"/><rect x="174" y="290" width="46" height="22"/><rect x="228" y="290" width="56" height="22"/><rect x="292" y="290" width="30" height="22"/><rect x="330" y="290" width="50" height="22"/>
+              <rect x="140" y="320" width="48" height="14"/><rect x="196" y="320" width="36" height="14"/><rect x="240" y="320" width="60" height="14"/><rect x="308" y="320" width="40" height="14"/>
+            </g>
+          </g>
+          <text x="260" y="372" class="chip__tag mono">standard cells</text>
+        </g>
+        <!-- metal routing -->
+        <g class="chip__layer" data-depth="2">
+          <g transform="skewX(-24)" transform-origin="260 280">
+            <rect x="120" y="215" width="280" height="130" rx="8" class="lay lay--metal"/>
+            <g class="route">
+              <path d="M135 240 h 90 l 24 24 h 120"/>
+              <path d="M135 280 h 140 l 20 -20 h 80"/>
+              <path d="M135 316 h 60 l 18 14 h 90 l 20 -18 h 50"/>
+              <circle cx="372" cy="264" r="5"/>
+              <circle cx="380" cy="240" r="5"/>
+              <circle cx="378" cy="312" r="5"/>
+            </g>
+          </g>
+          <text x="260" y="372" class="chip__tag mono">metal routing</text>
+        </g>
+        <!-- die -->
+        <g class="chip__layer" data-depth="1">
+          <g transform="skewX(-24)" transform-origin="260 280">
+            <rect x="110" y="205" width="300" height="150" rx="8" class="lay lay--die"/>
+            <rect x="136" y="226" width="120" height="74" rx="4" class="block"/>
+            <rect x="268" y="226" width="58" height="46" rx="4" class="block"/>
+            <rect x="338" y="226" width="48" height="108" rx="4" class="block"/>
+            <rect x="136" y="312" width="84" height="24" rx="4" class="block"/>
+            <rect x="230" y="284" width="96" height="52" rx="4" class="block"/>
+            <text x="196" y="268" class="chip__die mono" transform="skewX(24)" transform-origin="196 268">CPU</text>
+          </g>
+          <text x="260" y="376" class="chip__tag mono">die · 160 × 100 µm tile</text>
+        </g>
+        <!-- package -->
+        <g class="chip__layer" data-depth="0">
+          <g transform="skewX(-24)" transform-origin="260 280">
+            <rect x="90" y="190" width="340" height="180" rx="14" class="lay lay--pkg"/>
+            <g class="pins">
+              <rect x="112" y="170" width="14" height="20"/><rect x="152" y="170" width="14" height="20"/><rect x="192" y="170" width="14" height="20"/><rect x="232" y="170" width="14" height="20"/><rect x="272" y="170" width="14" height="20"/><rect x="312" y="170" width="14" height="20"/><rect x="352" y="170" width="14" height="20"/><rect x="392" y="170" width="14" height="20"/>
+              <rect x="112" y="370" width="14" height="20"/><rect x="152" y="370" width="14" height="20"/><rect x="192" y="370" width="14" height="20"/><rect x="232" y="370" width="14" height="20"/><rect x="272" y="370" width="14" height="20"/><rect x="312" y="370" width="14" height="20"/><rect x="352" y="370" width="14" height="20"/><rect x="392" y="370" width="14" height="20"/>
+            </g>
+            <circle cx="124" cy="216" r="8" class="dot"/>
+          </g>
+          <text x="260" y="382" class="chip__tag mono">package</text>
+        </g>
+      </svg>
+    </div>
+  </div>
+
+  <div class="stats reveal" id="stats">
+    <div class="stat"><span class="stat__n" data-count="3">0</span><span class="stat__l">ASIC tapeouts</span></div>
+    <div class="stat"><span class="stat__n" data-count="126">0</span><span class="stat__l">at the UK's first Tiny Tapeout workshop</span></div>
+    <div class="stat"><span class="stat__n" data-count="37">0</span><span class="stat__l">members across 4 project teams</span></div>
+    <div class="stat"><span class="stat__n" data-count="7">0</span><span class="stat__l">industry partners engaged</span></div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="section" id="about">
+  <div class="section__head reveal">
+    <p class="kicker mono">// who we are</p>
+    <h2>From first logic gate to manufactured chip</h2>
+  </div>
+  <div class="cols">
+    <div class="reveal">
+      <p>
+        SHaRC is a student-led group at the University of Sheffield focused on developing
+        <strong>microelectronics hardware</strong>. We give students hands-on experience of modern digital
+        hardware design — including emerging fields such as <strong>RISC-V</strong> and
+        <strong>open-source chip design</strong> — through lab sessions, student-led seminars,
+        cross-year collaboration, and real engineering deadlines.
+      </p>
+      <p>
+        Members don't just simulate. They write RTL, verify it, prototype on FPGAs, and send designs
+        to be <em>manufactured on real silicon</em> through programmes like
+        <a href="https://tinytapeout.com" rel="noopener">Tiny Tapeout</a> — a journey very few
+        undergraduates anywhere get to make.
+      </p>
+      <p class="mono small">Academic lead: Mohammad R Eissa · Department of Electronic &amp; Electrical Engineering</p>
+    </div>
+    <div class="pipeline reveal" aria-label="Design flow: specification to tapeout">
+      <div class="pipeline__step"><span class="mono">01</span><h3>Spec</h3><p>Define the architecture</p></div>
+      <div class="pipeline__step"><span class="mono">02</span><h3>RTL</h3><p>Verilog / SystemVerilog design</p></div>
+      <div class="pipeline__step"><span class="mono">03</span><h3>Verify</h3><p>Simulation &amp; testbenches (CoralTB)</p></div>
+      <div class="pipeline__step"><span class="mono">04</span><h3>FPGA</h3><p>Prototype on real hardware</p></div>
+      <div class="pipeline__step pipeline__step--hot"><span class="mono">05</span><h3>Tapeout</h3><p>Manufactured silicon</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHY SILICON ============ -->
+<section class="section section--alt" id="silicon">
+  <div class="section__head reveal">
+    <p class="kicker mono">// why hardware, why now</p>
+    <h2>Everything runs on silicon. <span class="grad">Someone has to design it.</span></h2>
+  </div>
+  <div class="grid grid--3">
+    <article class="card reveal">
+      <h3>A world built on chips</h3>
+      <p>Phones, cars, medical devices, AI datacentres — every one depends on semiconductors. The global
+      chip industry is heading towards a <strong>trillion-dollar market</strong>, and demand for people
+      who can design hardware far outstrips supply.</p>
+    </article>
+    <article class="card reveal">
+      <h3>The UK's moment</h3>
+      <p>The UK is a world leader in <strong>chip design and IP</strong> — Arm started here — and the
+      government's <strong>National Semiconductor Strategy</strong> is investing £1&nbsp;billion in the
+      sector. The bottleneck isn't ambition. It's <strong>skilled engineers</strong>.</p>
+    </article>
+    <article class="card reveal">
+      <h3>Open-source silicon</h3>
+      <p>Open PDKs and tools like those behind Tiny Tapeout have collapsed the cost of making a chip
+      from millions to tens of pounds, putting real tapeouts within reach of
+      <strong>students</strong> — and SHaRC is the UK's leading student group doing exactly that.</p>
+    </article>
+  </div>
+  <p class="section__note reveal">
+    SHaRC works alongside organisations like <a href="https://www.ukesf.org" rel="noopener">UKESF</a> to close the
+    UK semiconductor skills gap — and our members graduate having already shipped silicon.
+  </p>
+</section>
+
+<!-- ============ PROJECTS ============ -->
+<section class="section" id="projects">
+  <div class="section__head reveal">
+    <p class="kicker mono">// project teams 2025–26</p>
+    <h2>Four teams. One mission: <span class="grad">ship hardware.</span></h2>
+  </div>
+  <div class="grid grid--2">
+    <article class="card card--project reveal" style="--pc:#6CCCD8">
+      <header><span class="mono card__id">ANCHOR</span><span class="card__count mono">16 members</span></header>
+      <h3>FPGA Cryptography</h3>
+      <p>Our first-year runway: hardware implementations of cryptographic algorithms on FPGA.
+      No prerequisites — members learn digital design, embedded programming and the route to
+      Tiny Tapeout from zero.</p>
+      <footer class="mono">FPGA · security · beginner-friendly</footer>
+    </article>
+    <article class="card card--project reveal" style="--pc:#FEA23A">
+      <header><span class="mono card__id">RetroSoC</span><span class="card__count mono">7 members</span></header>
+      <h3>A retro computer from scratch</h3>
+      <p>Building a complete retro computer system from the ground up — CPU, memory, video —
+      learning Verilog and computer architecture by recreating the machines that started it all.</p>
+      <footer class="mono">SoC · Verilog · computer architecture</footer>
+    </article>
+    <article class="card card--project reveal" style="--pc:#4B71B8">
+      <header><span class="mono card__id">Ripple</span><span class="card__count mono">8 members</span></header>
+      <h3>RISC-V SoC design</h3>
+      <p>A RISC-V system-on-chip designed with modern open-source EDA tools — from the
+      <code>ripple-32i</code> RV32I core through to physical design, targeting fabrication.</p>
+      <footer class="mono">RISC-V · OpenLane · open-source EDA</footer>
+    </article>
+    <article class="card card--project reveal" style="--pc:#9ADBE8">
+      <header><span class="mono card__id">LogiSynth</span><span class="card__count mono">6 members</span></header>
+      <h3>FPGA audio synthesizer</h3>
+      <p>A hardware audio synthesizer on FPGA — oscillators, envelopes and filters in pure digital
+      logic. Functional specification complete; RTL in development.</p>
+      <footer class="mono">FPGA · DSP · audio</footer>
+    </article>
+  </div>
+
+  <div class="flagship reveal">
+    <div class="flagship__copy">
+      <p class="kicker mono">// flagship</p>
+      <h3>The TinyTapeStation</h3>
+      <p>SHaRC's premier ASIC: an RS-funded, <strong>open-source retro gaming chip</strong> designed by
+      students and manufactured through Tiny Tapeout — proof that a student team can take a console
+      from idea to silicon. Featured on
+      <a href="https://www.rs-online.com/designspark/the-tiny-tapestation-sharcs-open-source-asic-for-retro-gaming" rel="noopener">RS DesignSpark</a>.</p>
+      <div class="taglist mono">
+        <span>tt_um · Verilog</span><span>sprite engine</span><span>RS Components funded</span>
+      </div>
+    </div>
+    <div class="flagship__links">
+      <a class="btn btn--ghost" href="https://github.com/Sheffield-Chip-Design-Team/Sheffield-TTX" rel="noopener">Source on GitHub →</a>
+      <a class="btn btn--ghost" href="https://github.com/Sheffield-Chip-Design-Team" rel="noopener">All our silicon →</a>
+    </div>
+  </div>
+
+  <p class="section__note reveal">
+    We also maintain <a href="https://github.com/Sheffield-Chip-Design-Team" rel="noopener"><strong>CoralTB</strong></a>,
+    our open-source hardware verification package, plus tapeout tiles for UART, SPI memory controllers,
+    an ASCON crypto accelerator and a demoscene chip.
+  </p>
+</section>
+
+<!-- ============ ACHIEVEMENTS ============ -->
+<section class="section section--alt" id="achievements">
+  <div class="section__head reveal">
+    <p class="kicker mono">// receipts</p>
+    <h2>Things we've actually done</h2>
+  </div>
+  <ol class="timeline">
+    <li class="timeline__item reveal">
+      <span class="timeline__badge mono">3×</span>
+      <div><h3>Three ASIC tapeouts</h3>
+      <p>Student designs manufactured on real silicon through Tiny Tapeout shuttles — establishing
+      Sheffield as the leading UK student society for chip design.</p></div>
+    </li>
+    <li class="timeline__item reveal">
+      <span class="timeline__badge mono">126</span>
+      <div><h3>The UK's first Tiny Tapeout workshop</h3>
+      <p>Hosted at the University of Sheffield in March 2026 — 126 participants, open to any university
+      student with no prerequisites, and the largest workshop in Tiny Tapeout history.</p></div>
+    </li>
+    <li class="timeline__item reveal">
+      <span class="timeline__badge mono">⌬</span>
+      <div><h3>SSCS Chipathon 2026</h3>
+      <p>Entered the IEEE Solid-State Circuits Society Chipathon with "Grouper" and "Trouper" —
+      a LoRa SoC and MIMO DSP engine designed with open-source tools.</p></div>
+    </li>
+    <li class="timeline__item reveal">
+      <span class="timeline__badge mono">10</span>
+      <div><h3>EPC Hammermen Prize — final 10</h3>
+      <p>Our entry reached the finals of the
+      <a href="https://epc.ac.uk/article/finalists-for-the-hammermen-david-k-harrison-student-prize-2025/" rel="noopener">EPC Hammermen David K Harrison Student Prize 2025</a>.</p></div>
+    </li>
+    <li class="timeline__item reveal">
+      <span class="timeline__badge mono">RV</span>
+      <div><h3>Tiny Tapeout RISC-V peripheral competition</h3>
+      <p>Competed in the <a href="https://tinytapeout.com/competitions/risc-v-peripheral/" rel="noopener">RISC-V
+      peripheral design competition</a>, building silicon-ready peripherals for RISC-V systems.</p></div>
+    </li>
+    <li class="timeline__item reveal">
+      <span class="timeline__badge mono">→</span>
+      <div><h3>Macro placement algorithms — 2026</h3>
+      <p>Competing in the <a href="https://github.com/partcleda/macro-place-challenge-2026" rel="noopener">Partcl
+      &amp; Hudson River Trading macro placement challenge</a> — where chip design meets algorithms
+      and optimisation.</p></div>
+    </li>
+  </ol>
+</section>
+
+<!-- ============ COMMUNITY ============ -->
+<section class="section" id="community">
+  <div class="section__head reveal">
+    <p class="kicker mono">// what members get</p>
+    <h2>A community that compounds</h2>
+  </div>
+  <div class="grid grid--3">
+    <article class="card reveal">
+      <h3>Skills that stick</h3>
+      <p>Weekly lab sessions, student-led seminars and project deadlines build real digital design
+      capability: RTL, verification, FPGA bring-up, physical design and team engineering practice.</p>
+    </article>
+    <article class="card reveal">
+      <h3>People and network</h3>
+      <p>Cross-year collaboration, regular socials, and direct contact with industry at our
+      Semiconductor Skills Meetup and workshops. An inclusive, supportive environment —
+      most members start with zero hardware background.</p>
+    </article>
+    <article class="card reveal">
+      <h3>Careers that launch</h3>
+      <p>SHaRC members have gone on to roles at <strong>Arm, Meta, EnSilica, P&amp;G, Morgan Stanley and
+      Airbus</strong>, plus funded research through Sheffield's SURE scheme. "I taped out a chip as an
+      undergraduate" is a sentence that opens doors.</p>
+    </article>
+  </div>
+</section>
+
+<!-- ============ PARTNERS ============ -->
+<section class="section section--alt" id="partners">
+  <div class="section__head reveal">
+    <p class="kicker mono">// industry &amp; academia</p>
+    <h2>Partner with the UK's leading student chip design group</h2>
+  </div>
+  <div class="cols">
+    <div class="reveal">
+      <p>
+        Industry partners have joined our meetups and workshops, offered career insight, and seen
+        student engineering delivered to real deadlines — like our RS-funded TinyTapeStation.
+        We've been approached to help other universities start similar initiatives.
+      </p>
+      <p><strong>Sponsorship and collaboration</strong> gets you early access to students who already
+      design silicon, brand presence at high-visibility events, and a direct channel into the
+      next generation of UK semiconductor engineers.</p>
+      <div class="hero__cta">
+        <a class="btn btn--accent" href="https://www.linkedin.com/company/sharc-sheffield" rel="noopener">Talk to us on LinkedIn</a>
+      </div>
+    </div>
+    <div class="partners reveal" aria-label="Organisations SHaRC has worked with">
+      <span class="chipname">EnSilica</span>
+      <span class="chipname">Arm</span>
+      <span class="chipname">Novomorphic</span>
+      <span class="chipname">Phlux</span>
+      <span class="chipname">GF Micro</span>
+      <span class="chipname">Aegiq</span>
+      <span class="chipname">UKESF</span>
+      <span class="chipname">RS / DesignSpark</span>
+      <span class="chipname">Tiny Tapeout</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ JOIN ============ -->
+<section class="section" id="join">
+  <div class="join reveal">
+    <div>
+      <p class="kicker mono">// no prerequisites</p>
+      <h2>Your first chip starts here</h2>
+      <p>
+        Whether you've never written a line of Verilog or you dream in waveforms — there's a team for
+        you. First-years start on <strong>ANCHOR</strong>, our beginner-friendly FPGA project, and the
+        path leads all the way to tapeout.
+      </p>
+      <ul class="join__steps">
+        <li><span class="mono">01</span> Follow us and say hello</li>
+        <li><span class="mono">02</span> Come to a lab session or seminar</li>
+        <li><span class="mono">03</span> Pick a project team</li>
+        <li><span class="mono">04</span> Ship silicon</li>
+      </ul>
+      <div class="hero__cta">
+        <a class="btn btn--accent" href="https://www.instagram.com/sharc_sheffield/" rel="noopener">Instagram</a>
+        <a class="btn btn--ghost" href="https://www.linkedin.com/company/sharc-sheffield" rel="noopener">LinkedIn</a>
+        <a class="btn btn--ghost" href="https://github.com/Sheffield-Chip-Design-Team" rel="noopener">GitHub</a>
+      </div>
+    </div>
+    <img class="join__mark" src="assets/brand/sharc-mark-lightblue.svg" alt="SHaRC fin mark" width="300" height="316">
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__brand">
+      <img src="assets/brand/sharc-mark-white.svg" alt="" width="34" height="36">
+      <div>
+        <strong>SHaRC</strong><br>
+        <span>Sheffield Hardware and Reconfigurable Computing</span><br>
+        <span>University of Sheffield</span>
+      </div>
+    </div>
+    <nav class="footer__links" aria-label="Social">
+      <a href="https://www.linkedin.com/company/sharc-sheffield" rel="noopener">LinkedIn</a>
+      <a href="https://www.instagram.com/sharc_sheffield/" rel="noopener">Instagram</a>
+      <a href="https://github.com/Sheffield-Chip-Design-Team" rel="noopener">GitHub</a>
+      <a href="https://tinytapeout.com" rel="noopener">Tiny Tapeout</a>
+    </nav>
+  </div>
+  <p class="footer__fine mono">© <span id="year"></span> SHaRC · built by students who'd rather be writing Verilog</p>
+</footer>
+
+<script src="assets/js/main.js" defer></script>
+</body>
+</html>
