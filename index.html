@@ -156,6 +156,21 @@
   </div>
 </section>
 
+<!-- ============ PHOTO STRIP ============ -->
+<div class="strip" aria-label="Photos from SHaRC events">
+  <div class="strip__track">
+    <figure class="strip__item"><img src="assets/img/photos/silicon/2026-09-12-orconf-chip-handover-800.webp" width="800" height="589" loading="lazy" decoding="async" alt="SHaRC members with Tiny Tapeout founder Matt Venn, who holds up the board carrying our chip"></figure>
+    <figure class="strip__item"><img src="assets/img/photos/events/2026-09-23-semiconductor-skills-meetup-800.webp" width="800" height="600" loading="lazy" decoding="async" alt="A busy room of students and industry guests networking at the Semiconductor Skills Meet-Up"></figure>
+    <figure class="strip__item"><img src="assets/img/photos/community/2026-09-29-london-alumni-placement-meetup-800.webp" width="600" height="800" loading="lazy" decoding="async" alt="SHaRC alumni and placement students in front of the Canary Wharf sign at night"></figure>
+    <figure class="strip__item"><img src="assets/img/photos/events/2026-09-24-cca-fair-stand-800.webp" width="800" height="600" loading="lazy" decoding="async" alt="SHaRC members at their stand with a game demo and controllers"></figure>
+    <figure class="strip__item"><img src="assets/img/photos/events/2026-06-26-nef-cleanroom-visit-800.webp" width="800" height="600" loading="lazy" decoding="async" alt="SHaRC members in cleanroom suits at the National Epitaxy Facility"></figure>
+    <figure class="strip__item"><img src="assets/img/photos/community/2026-09-29-microelectronics-uk-dinner-800.webp" width="600" height="800" loading="lazy" decoding="async" alt="SHaRC members, alumni and guests sharing dinner in London"></figure>
+    <figure class="strip__item"><img src="assets/img/photos/events/2026-06-23-verification-futures-reading-800.webp" width="800" height="591" loading="lazy" decoding="async" alt="Four SHaRC members at the Verification and Semiconductor Futures conference"></figure>
+    <figure class="strip__item"><img src="assets/img/photos/events/2026-08-imec-asic-summer-school-800.webp" width="800" height="523" loading="lazy" decoding="async" alt="Three SHaRC members at the imec ASIC Design Summer School in Belgium"></figure>
+    <figure class="strip__item"><img src="assets/img/photos/community/undated-anchor-team-workshop-800.webp" width="600" height="800" loading="lazy" decoding="async" alt="An ANCHOR team member working on an FPGA board at a workshop"></figure>
+  </div>
+</div>
+
 <!-- ============ ABOUT ============ -->
 <section class="section" id="about">
   <div class="section__head reveal">
@@ -357,6 +372,43 @@
     on the open-source SkyWater SKY130 and GlobalFoundries GF180MCU process design kits.
     <span class="mono">Click a chip to flip it over.</span></p>
   </div>
+
+  <div class="silicon reveal">
+    <figure class="silicon__hero photo">
+      <img src="assets/img/photos/silicon/2026-09-12-orconf-chip-handover-800.webp"
+           srcset="assets/img/photos/silicon/2026-09-12-orconf-chip-handover-800.webp 800w, assets/img/photos/silicon/2026-09-12-orconf-chip-handover.webp 1600w"
+           sizes="(max-width: 980px) 100vw, 640px" width="800" height="589" loading="lazy" decoding="async"
+           alt="Four SHaRC members smiling with Tiny Tapeout founder Matt Venn, who holds up the board carrying SHaRC's chip">
+      <figcaption class="mono">ORConf, Ghent · Sep 2026</figcaption>
+    </figure>
+    <div class="silicon__copy">
+      <p class="kicker mono">// first silicon is back</p>
+      <h3>"That's ours."</h3>
+      <p>At ORConf 2026 in Ghent, Tiny Tapeout founder Matt Venn handed us the board carrying our
+      chip, manufactured by <a href="https://wafer.space" rel="noopener">wafer.space</a> with
+      GlobalFoundries. Within weeks the TinyTapeStation was running its dragon game on real silicon,
+      and at Microelectronics UK we put our dies under the microscope and found the Tiny Tapeout logo
+      etched in the corner.</p>
+    </div>
+    <div class="silicon__row">
+      <figure class="photo">
+        <img src="assets/img/photos/silicon/2026-09-21-tinytapestation-silicon-running-800.webp" width="800" height="651" loading="lazy" decoding="async"
+             alt="A monitor showing the TinyTapeStation dragon game, driven by the taped-out chip on a Tiny Tapeout board with a SNES controller">
+        <figcaption class="mono">TinyTapeStation, running on silicon · Sep 2026</figcaption>
+      </figure>
+      <figure class="photo">
+        <img src="assets/img/photos/silicon/2026-09-30-aeolus-die-microscope-800.webp" width="800" height="600" loading="lazy" decoding="async"
+             alt="Magnified top-down view of SHaRC's Aeolus CPU die showing the bond pads around the silicon">
+        <figcaption class="mono">Aeolus CPU die, magnified · Sep 2026</figcaption>
+      </figure>
+      <figure class="photo">
+        <img src="assets/img/photos/silicon/2026-09-30-kla-profiler-tinytapeout-logo-800.webp" width="600" height="800" loading="lazy" decoding="async"
+             alt="A SHaRC member grinning beside a KLA Zeta-20 optical profiler screen showing a close-up of the chip surface">
+        <figcaption class="mono">KLA Zeta-20 profiler · Sep 2026</figcaption>
+      </figure>
+    </div>
+  </div>
+
   <div class="grid grid--3 fab">
 
     <article class="die reveal" tabindex="0" aria-label="TinyTapeStation chip. Press Enter to flip." style="--dc:#FEA23A">
@@ -504,6 +556,12 @@
   </div>
   <ol class="timeline">
     <li class="timeline__item reveal">
+      <span class="timeline__badge mono">Si</span>
+      <div><h3>First silicon back, September 2026</h3>
+      <p>Our chips came back from the fab: handed over by Matt Venn at ORConf in Ghent, with the
+      TinyTapeStation running its game on real silicon weeks later. <a href="#tapeouts">See the chips ↑</a></p></div>
+    </li>
+    <li class="timeline__item reveal">
       <span class="timeline__badge mono">6×</span>
       <div><h3>Six designs taped out</h3>
       <p>Student designs manufactured on real silicon across five Tiny Tapeout shuttles and two open
@@ -556,22 +614,34 @@
     <h2>A community that compounds</h2>
   </div>
   <div class="grid grid--3">
-    <article class="card reveal">
-      <h3>Skills that stick</h3>
-      <p>Weekly lab sessions, student-led seminars and project deadlines build real digital design
-      capability: RTL, verification, FPGA bring-up, physical design and team engineering practice.</p>
+    <article class="card card--photo reveal">
+      <img class="card__img card__img--tall" src="assets/img/photos/community/undated-anchor-team-workshop-800.webp" width="600" height="800" loading="lazy" decoding="async"
+           alt="An ANCHOR team member working at a laptop beside an FPGA board and jumper wires during a workshop">
+      <div class="card__body">
+        <h3>Skills that stick</h3>
+        <p>Weekly lab sessions, student-led seminars and project deadlines build real digital design
+        capability: RTL, verification, FPGA bring-up, physical design and team engineering practice.</p>
+      </div>
     </article>
-    <article class="card reveal">
-      <h3>People and network</h3>
-      <p>Cross-year collaboration, regular socials, and direct contact with industry at our
-      Semiconductor Skills Meetup and workshops. An inclusive, supportive environment, where
-      most members start with zero hardware background.</p>
+    <article class="card card--photo reveal">
+      <img class="card__img card__img--tall" src="assets/img/photos/community/2026-09-29-microelectronics-uk-dinner-800.webp" width="600" height="800" loading="lazy" decoding="async"
+           alt="SHaRC members, alumni and guests sharing dinner at a long table in London">
+      <div class="card__body">
+        <h3>People and network</h3>
+        <p>Cross-year collaboration, regular socials, and direct contact with industry at our
+        Semiconductor Skills Meet-Up and workshops. An inclusive, supportive environment, where
+        most members start with zero hardware background.</p>
+      </div>
     </article>
-    <article class="card reveal">
-      <h3>Careers that launch</h3>
-      <p>SHaRC members have gone on to roles at <strong>Arm, Meta, EnSilica, P&amp;G, Morgan Stanley and
-      Airbus</strong>, plus funded research through Sheffield's SURE scheme. "I taped out a chip as an
-      undergraduate" is a sentence that opens doors.</p>
+    <article class="card card--photo reveal">
+      <img class="card__img card__img--tall" src="assets/img/photos/community/2026-09-29-london-alumni-placement-meetup-800.webp" width="600" height="800" loading="lazy" decoding="async"
+           alt="SHaRC alumni and placement students posing in front of the illuminated Canary Wharf sign at night">
+      <div class="card__body">
+        <h3>Careers that launch</h3>
+        <p>SHaRC members have gone on to roles at <strong>Arm, Meta, EnSilica, P&amp;G, Morgan Stanley and
+        Airbus</strong>, plus funded research through Sheffield's SURE scheme. Our alumni and placement
+        students still meet up, like this night at Canary Wharf.</p>
+      </div>
     </article>
   </div>
 </section>
@@ -604,35 +674,66 @@
     <p class="kicker mono">// events &amp; life at SHaRC</p>
     <h2>Workshops, meetups and the occasional pizza</h2>
   </div>
-  <div class="grid grid--2">
-    <article class="card card--event reveal">
-      <span class="event__when mono">March 2026 · TUoS</span>
-      <h3>Tiny Tapeout Workshop</h3>
-      <p>The UK's first, and the largest in Tiny Tapeout history: 126 students from any university,
-      no prerequisites, designing chips in a day. We plan to run it again, so follow us to hear about
-      the next one.</p>
+  <div class="grid grid--3 events">
+    <article class="card card--photo card--event reveal">
+      <img class="card__img" src="assets/img/photos/events/2026-03-05-tiny-tapeout-workshop-800.webp" width="800" height="533" loading="lazy" decoding="async"
+           alt="Group photo of the students at the first Tiny Tapeout workshop in the UK, hosted by SHaRC">
+      <div class="card__body">
+        <span class="event__when mono">5 Mar 2026 · Sheffield</span>
+        <h3>Tiny Tapeout Workshop</h3>
+        <p>The UK's first, and the largest in Tiny Tapeout history: 126 students from 10 universities,
+        no prerequisites, designing chips in an afternoon with founder Matt Venn.</p>
+      </div>
     </article>
-    <article class="card card--event reveal">
-      <span class="event__when mono">with UKESF STEP</span>
-      <h3>Semiconductor Skills Meetup</h3>
-      <p>Industry and academia in one room: career insight from working chip designers, networking for
-      students, and a showcase of what student silicon can do.</p>
+    <article class="card card--photo card--event reveal">
+      <img class="card__img" src="assets/img/photos/events/2026-09-23-semiconductor-skills-meetup-800.webp" width="800" height="600" loading="lazy" decoding="async"
+           alt="A busy room of students, academics and industry guests networking at the Semiconductor Skills Meet-Up">
+      <div class="card__body">
+        <span class="event__when mono">23 Sep 2026 · Sheffield</span>
+        <h3>Semiconductor Skills Meet-Up</h3>
+        <p>Part of STEP, with UKESF and CHIMES-IKC: a panel from Arm, Phlux, SCI Semiconductor and
+        EnSilica on skills and the future of chip design, then a packed evening of networking.</p>
+      </div>
     </article>
-    <article class="card card--event reveal">
-      <span class="event__when mono">showcase</span>
-      <h3>A Decade of the Diamond</h3>
-      <p>Live FPGA and RISC-V demos at the University's flagship Diamond building celebration,
-      putting student hardware in front of the whole university community.</p>
+    <article class="card card--photo card--event reveal">
+      <img class="card__img card__img--tall" src="assets/img/photos/events/2026-09-30-microelectronics-uk-excel-800.webp" width="600" height="800" loading="lazy" decoding="async"
+           alt="Two SHaRC representatives in front of the Microelectronics UK sponsors wall at ExCeL London">
+      <div class="card__body">
+        <span class="event__when mono">30 Sep 2026 · ExCeL London</span>
+        <h3>Microelectronics UK</h3>
+        <p>Two days catching up with alumni now in industry, sponsors and the UK's Innovation &amp;
+        Knowledge Centres, and seeing our own dies under the microscope.</p>
+      </div>
     </article>
-    <article class="card card--event reveal">
-      <span class="event__when mono">weekly</span>
-      <h3>Labs, seminars and socials</h3>
-      <p>Weekly lab sessions, student-led seminars on everything from RTL tricks to chip economics,
-      and regular socials. The community is the point: chips are how we make friends.</p>
+    <article class="card card--photo card--event reveal">
+      <img class="card__img" src="assets/img/photos/events/2026-09-24-cca-fair-stand-800.webp" width="800" height="600" loading="lazy" decoding="async"
+           alt="Three SHaRC members at their stand with a game demo, controllers and the SHaRC banner">
+      <div class="card__body">
+        <span class="event__when mono">24 Sep 2026 · Sheffield</span>
+        <h3>CCA fair</h3>
+        <p>Showing our chips and the TinyTapeStation to students from across the university.
+        Come and find our stand at the next one.</p>
+      </div>
+    </article>
+    <article class="card card--event card--road reveal">
+      <div class="road">
+        <figure class="photo"><img src="assets/img/photos/events/2026-06-23-verification-futures-reading-800.webp" width="800" height="591" loading="lazy" decoding="async" alt="Four SHaRC members at the Verification and Semiconductor Futures conference in Reading"><figcaption class="mono">Verification Futures, Reading · Jun</figcaption></figure>
+        <figure class="photo"><img src="assets/img/photos/events/2026-06-26-nef-cleanroom-visit-800.webp" width="800" height="600" loading="lazy" decoding="async" alt="SHaRC members in cleanroom suits at the National Epitaxy Facility"><figcaption class="mono">NEF cleanroom, Sheffield · Jun</figcaption></figure>
+        <figure class="photo"><img src="assets/img/photos/events/2026-07-16-siemens-transform-manchester-800.webp" width="800" height="600" loading="lazy" decoding="async" alt="A panel on stage in the auditorium at Siemens Transform 2026"><figcaption class="mono">Siemens Transform, Manchester · Jul</figcaption></figure>
+        <figure class="photo"><img src="assets/img/photos/events/2026-08-imec-asic-summer-school-800.webp" width="800" height="523" loading="lazy" decoding="async" alt="Three SHaRC members at the imec ASIC Design Summer School in Belgium"><figcaption class="mono">imec ASIC Summer School · Aug</figcaption></figure>
+      </div>
+      <div class="card__body">
+        <span class="event__when mono">2026 · on the road</span>
+        <h3>Conferences, cleanrooms and summer schools</h3>
+        <p>Members get out of the lab: verification conferences, Siemens Transform, a cleanroom tour of
+        the National Epitaxy Facility, and Europractice's ASIC Design Summer School at imec.</p>
+      </div>
     </article>
   </div>
   <p class="section__note reveal">
-    Photos and event announcements live on our
+    We also run weekly labs, student-led seminars and socials, and have demoed FPGA and RISC-V
+    hardware at the University's <em>A Decade of the Diamond</em>. More photos and event
+    announcements live on our
     <a href="https://www.instagram.com/sharc_sheffield/" rel="noopener">Instagram</a> and
     <a href="https://www.linkedin.com/company/sharc-sheffield" rel="noopener">LinkedIn</a>. Follow along to
     see the lab in action and catch the next event.
