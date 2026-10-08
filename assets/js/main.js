@@ -104,6 +104,17 @@
     explode();
   }
 
+  /* ----- photo strip: clone the set so the scroll loops seamlessly ----- */
+  var track = document.querySelector(".strip__track");
+  if (track && !reduceMotion) {
+    Array.prototype.slice.call(track.children).forEach(function (item) {
+      var clone = item.cloneNode(true);
+      clone.setAttribute("aria-hidden", "true");
+      clone.querySelector("img").alt = "";
+      track.appendChild(clone);
+    });
+  }
+
   /* ----- tapeout gallery: flip cards ----- */
   document.querySelectorAll(".die").forEach(function (die) {
     function flip() { die.classList.toggle("is-flipped"); }
